@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Events{% endblock %}
+
+{% block body %}
+    <div class="gallery events">
+        <h1>Our Next Events</h1>
+        <p class="intro">bla bla bla blabla bla bla blabla bla bla bla
+            bla bla bla blabla bla bla blabla bla bla bla
+            bla bla bla blabla bla bla bla
+        </p>
+        {% for event in events %}
+            <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+                <div class="card-header">{{ event.date|date('d M Y') }}</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ event.city }}</h4>
+                    {# map #}
+                    <p class="card-text">{{ event.address }}</p>
+                    <p class="card-text"><strong>{{ event.time|date('H:i') }}</strong></p>
+                    <p>Program :</p>
+                    <ul>
+                        {% for act in event.acts %}
+                            <a href="#"<li>{{ act.name }}</li></a>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
