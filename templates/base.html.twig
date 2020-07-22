@@ -15,10 +15,14 @@
         {% include '_navbar.html.twig' %}
     {% endblock %}
 
-<div class="container-fluid">
-    {% block body %}
+    <main class="container-fluid">
+        {% block body %}
+        {% endblock %}
+    </main>
+
+    {% block footer %}
+        {% include '_footer.html.twig' %}
     {% endblock %}
-</div>
 
 </body>
 {# {{ encore_entry_script_tags('app') }} #}
