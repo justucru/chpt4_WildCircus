@@ -1,0 +1,18 @@
+Checkpoint 4 - Wild Circus - User Stories
+
+As the administrator, I can create, edit, and delete :
+- performers
+- acts
+- events
+
+As a visitor, I can view :
+- performers
+- acts (and the associated performers)
+- events (and the associated acts)
+
+As a visitor, I can :
+- contact the site administrator
+- book tickets to an event
+
+Bonus :
+Spectators can use a QR code to gain access to the event they booked (e-ticket)
