@@ -10101,8 +10101,20 @@ h3 {
   color: #002B36;
 }
 
-h1 {
-  color: #B58900;
+body {
+  font-family: "Lato", sans-serif;
+  font-size: medium;
+}
+
+nav {
+  font-size: large;
+}
+nav .navbar-brand {
+  font-family: "Bungee", cursive;
+  font-size: larger;
+}
+nav .navbar-collapse {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -11,6 +11,18 @@ $text-font: 'Lato', sans-serif;
 
 //custom CSS
 
-h1 {
-    color: $primary;
+body {
+    font-family: $text-font;
+    font-size: medium;
+}
+
+nav {
+    font-size: large;
+    .navbar-brand {
+        font-family: $title-font;
+        font-size: larger;
+    }
+    .navbar-collapse {
+        font-weight: bold;
+    }
 }
