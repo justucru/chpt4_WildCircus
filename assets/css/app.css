@@ -10117,6 +10117,14 @@ main {
   flex: 1 0 auto;
 }
 
+h1 {
+  font-family: "Bungee", cursive;
+  color: #2AA198;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
 footer {
   flex-shrink: 0;
 }
@@ -10176,6 +10184,22 @@ footer .footer-socmed .footerImg {
   footer .footer-socmed {
     justify-content: center;
   }
+}
+.performers .intro {
+  width: 50%;
+  margin: 30px auto;
+  text-align: center;
+}
+.performers .card {
+  margin: 50px auto;
+}
+.performers .card .card-title {
+  text-align: center;
+}
+.performers .card img {
+  margin: 5px auto;
+  width: 90%;
+  height: auto;
 }
 
 /*# sourceMappingURL=app.css.map */

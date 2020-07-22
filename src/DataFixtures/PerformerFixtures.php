@@ -12,9 +12,9 @@ class PerformerFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $performer = new Performer();
-        $performer->setName('Lucas Balan');
-        $performer->setNationality('French');
-        $performer->setPicture('img/performer/paco.jpeg');
+        $performer->setName('Sou Missez');
+        $performer->setNationality('Mexican');
+        $performer->setPicture('img/performer/sou.jpeg');
         $performer->setBiography(
             'bla bla bla bla bla bla bla bla bla
             bla bla bla bla bla bla
@@ -24,9 +24,9 @@ class PerformerFixtures extends Fixture
         $manager->persist($performer);
 
         $performer = new Performer();
-        $performer->setName('Sou Missez');
-        $performer->setNationality('Mexican');
-        $performer->setPicture('img/performer/sou.jpeg');
+        $performer->setName('Lucas Balan');
+        $performer->setNationality('French');
+        $performer->setPicture('img/performer/paco.jpeg');
         $performer->setBiography(
             'bla bla bla bla bla bla bla bla bla
             bla bla bla bla bla bla

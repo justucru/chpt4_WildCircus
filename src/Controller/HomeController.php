@@ -11,7 +11,7 @@ class HomeController extends AbstractController
 {
     /**
      * @return Response
-     * @Route("/", name="index")
+     * @Route("/", name="app_index")
      */
     public function homepage() : Response
     {
