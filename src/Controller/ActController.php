@@ -26,6 +26,16 @@ class ActController extends AbstractController
     }
 
     /**
+     * @Route("/all", name="act_all", methods={"GET"})
+     */
+    public function showAll(ActRepository $actRepository): Response
+    {
+        return $this->render('act/showAll.html.twig', [
+            'acts' => $actRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/new", name="act_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response

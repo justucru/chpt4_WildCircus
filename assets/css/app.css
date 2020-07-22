@@ -10185,18 +10185,19 @@ footer .footer-socmed .footerImg {
     justify-content: center;
   }
 }
-.performers .intro {
+.gallery .intro {
   width: 50%;
   margin: 30px auto;
   text-align: center;
 }
-.performers .card {
+.gallery .card {
   margin: 50px auto;
 }
-.performers .card .card-title {
+.gallery .card .card-title {
   text-align: center;
+  font-family: "Bungee", cursive;
 }
-.performers .card img {
+.gallery .card img {
   margin: 5px auto;
   width: 90%;
   height: auto;

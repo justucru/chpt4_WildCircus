@@ -102,7 +102,7 @@ footer {
 }
 
 //PERFORMERS
-.performers {
+.gallery {
     .intro {
         width: 50%;
         margin: 30px auto;
@@ -112,6 +112,7 @@ footer {
         margin: 50px auto;
         .card-title {
             text-align: center;
+            font-family: $title-font;
         }
         img {
             margin: 5px auto;
