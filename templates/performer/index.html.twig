@@ -14,7 +14,8 @@
                 <th>Nationality</th>
                 <th>Picture</th>
                 <th>Biography</th>
-                <th>actions</th>
+                <th>Acts</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -23,11 +24,18 @@
                 <td>{{ performer.id }}</td>
                 <td>{{ performer.name }}</td>
                 <td>{{ performer.nationality }}</td>
-                <td>{{ performer.picture }}</td>
+                <td>{% if performer.picture is not null %}
+                        ok
+                    {% else %}
+                        no
+                    {% endif %}
+                </td>
                 <td>{{ performer.biography }}</td>
+                <td>{% for act in performer.acts %}
+                        {{ act.name }}<br>
+                    {% endfor %}
+                </td>
                 <td>
-                    <a href="{{ path('performer_show', {'id': performer.id}) }}">show</a>
-                    /
                     <a href="{{ path('performer_edit', {'id': performer.id}) }}">edit</a>
                 </td>
             </tr>
@@ -40,5 +48,7 @@
     </table>
 
     <a href="{{ path('performer_new') }}">Create new</a>
+    <br><br>
+    <a href="{{ path('admin_index') }}">Back to admin</a>
 </div>
 {% endblock %}

@@ -14,7 +14,7 @@
                     <th>Description</th>
                     <th>Duration</th>
                     <th>Picture</th>
-                    <th>actions</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -23,11 +23,14 @@
                     <td>{{ act.id }}</td>
                     <td>{{ act.name }}</td>
                     <td>{{ act.description }}</td>
-                    <td>{{ act.duration }}</td>
-                    <td>{{ act.picture }}</td>
+                    <td>{{ act.duration }} min</td>
+                    <td>{% if act.picture is not null %}
+                            ok
+                        {% else %}
+                            no
+                        {% endif %}
+                    </td>
                     <td>
-                        <a href="{{ path('act_show', {'id': act.id}) }}">show</a>
-                        /
                         <a href="{{ path('act_edit', {'id': act.id}) }}">edit</a>
                     </td>
                 </tr>
@@ -40,5 +43,7 @@
         </table>
 
         <a href="{{ path('act_new') }}">Create new</a>
+        <br><br>
+        <a href="{{ path('admin_index') }}">Back to admin</a>
     </div>
 {% endblock %}

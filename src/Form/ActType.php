@@ -16,8 +16,6 @@ class ActType extends AbstractType
             ->add('description')
             ->add('duration')
             ->add('picture')
-            ->add('performers')
-            ->add('events')
         ;
     }
 
