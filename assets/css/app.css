@@ -10195,6 +10195,11 @@ footer .footer-socmed .footerImg {
   text-align: center;
 }
 
+.tab-content {
+  margin: 10px;
+  padding-top: 5px;
+}
+
 .gallery .intro {
   width: 50%;
   margin: 30px auto;
