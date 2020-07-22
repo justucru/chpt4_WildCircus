@@ -3,39 +3,41 @@
 {% block title %}Act index{% endblock %}
 
 {% block body %}
-    <h1>Act index</h1>
+    <div class="container-fluid">
+        <h1>Act index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Duration</th>
-                <th>Picture</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for act in acts %}
-            <tr>
-                <td>{{ act.id }}</td>
-                <td>{{ act.name }}</td>
-                <td>{{ act.description }}</td>
-                <td>{{ act.duration }}</td>
-                <td>{{ act.picture }}</td>
-                <td>
-                    <a href="{{ path('act_show', {'id': act.id}) }}">show</a>
-                    <a href="{{ path('act_edit', {'id': act.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Duration</th>
+                    <th>Picture</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for act in acts %}
+                <tr>
+                    <td>{{ act.id }}</td>
+                    <td>{{ act.name }}</td>
+                    <td>{{ act.description }}</td>
+                    <td>{{ act.duration }}</td>
+                    <td>{{ act.picture }}</td>
+                    <td>
+                        <a href="{{ path('act_show', {'id': act.id}) }}">show</a>
+                        <a href="{{ path('act_edit', {'id': act.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('act_new') }}">Create new</a>
+        <a href="{{ path('act_new') }}">Create new</a>
+    </div>
 {% endblock %}
