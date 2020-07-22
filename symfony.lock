@@ -273,13 +273,11 @@
     "symfony/polyfill-php80": {
         "version": "v1.18.0"
     },
-<<<<<<< HEAD
     "symfony/profiler-pack": {
         "version": "v1.0.4"
-=======
+    },
     "symfony/property-access": {
         "version": "v4.4.10"
->>>>>>> 68dde113acb15b5d25dbf25198f898a02170f289
     },
     "symfony/routing": {
         "version": "4.2",
@@ -295,7 +293,6 @@
             "config/routes.yaml"
         ]
     },
-<<<<<<< HEAD
     "symfony/security-bundle": {
         "version": "4.4",
         "recipe": {
@@ -312,12 +309,12 @@
         "version": "v4.4.10"
     },
     "symfony/security-http": {
-=======
+        "version": "v4.4.10"
+    },
     "symfony/security-core": {
         "version": "v4.4.10"
     },
     "symfony/security-csrf": {
->>>>>>> 68dde113acb15b5d25dbf25198f898a02170f289
         "version": "v4.4.10"
     },
     "symfony/service-contracts": {
