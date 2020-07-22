@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Info{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>Edit my personal information</h1>
+
+        {{ include('admin/_form.html.twig', {'button_label': 'Update'}) }}
+
+        <a href="{{ path('admin_index') }}">back to admin</a>
+
+    </div>
+{% endblock %}
