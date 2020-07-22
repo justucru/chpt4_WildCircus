@@ -103,8 +103,13 @@ footer {
 
 //HOMEPAGE
 
-.carousel {
-    img{
+.jumbotron {
+    background-color: white;
+    h1 {
+        color: $primary;
+    }
+    p, a {
+        text-align: center;
     }
 }
 
@@ -121,10 +126,13 @@ footer {
             text-align: center;
             font-family: $title-font;
         }
-        img {
-            margin: 5px auto;
-            width: 90%;
-            height: auto;
-        }
+    }
+}
+
+.acts {
+    img {
+        margin: 5px 0;
+        width: 100%;
+        height: auto;
     }
 }

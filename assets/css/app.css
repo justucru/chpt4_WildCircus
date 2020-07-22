@@ -10185,6 +10185,16 @@ footer .footer-socmed .footerImg {
     justify-content: center;
   }
 }
+.jumbotron {
+  background-color: white;
+}
+.jumbotron h1 {
+  color: #B58900;
+}
+.jumbotron p, .jumbotron a {
+  text-align: center;
+}
+
 .gallery .intro {
   width: 50%;
   margin: 30px auto;
@@ -10197,9 +10207,10 @@ footer .footer-socmed .footerImg {
   text-align: center;
   font-family: "Bungee", cursive;
 }
-.gallery .card img {
-  margin: 5px auto;
-  width: 90%;
+
+.acts img {
+  margin: 5px 0;
+  width: 100%;
   height: auto;
 }
 
