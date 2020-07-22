@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Our Performers{% endblock %}
+
+{% block body %}
+    <div class="gallery performers">
+        <h1>Our Performers</h1>
+        <p class="intro">bla bla bla blabla bla bla blabla bla bla bla
+            bla bla bla blabla bla bla blabla bla bla bla
+            bla bla bla blabla bla bla bla
+        </p>
+        {% for performer in performers %}
+        <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header">From {{ performer.nationality }}</div>
+            <div class="card-body">
+                <h4 class="card-title">{{ performer.name }}</h4>
+                <img src="{{ asset('{{ performer.picture }}') }}">
+                <p class="card-text">{{ performer.biography }}</p>
+                <p>Associated acts :</p>
+                <ul>
+                {% for act in performer.acts %}
+                    <a href="#"<li>{{ act.name }}</li></a>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
