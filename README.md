@@ -26,5 +26,6 @@
 
 * finish QR code integration in confirmation email
 * hide password characters in admin info edit form
+* fix card sizes on acts and performers page (desktop)
 * add map on events page
 * internationalization
