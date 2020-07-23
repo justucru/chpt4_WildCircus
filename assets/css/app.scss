@@ -30,7 +30,7 @@ main {
 
 h1 {
     font-family: $title-font;
-    color: $success;
+    color: $primary;
     text-align: center;
     margin: 10px;
     padding: 10px;
@@ -43,10 +43,17 @@ footer {
 //NAVBAR
 nav {
     font-size: large;
+
+    .navbar-nav {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
     .navbar-brand {
         font-family: $title-font;
         font-size: larger;
     }
+
     .navbar-collapse {
         font-weight: bold;
     }
@@ -58,58 +65,219 @@ footer {
     color: $primary;
     display: flex;
     flex-direction: column;
-    .footer-links {
-        margin: 0;
-        padding: 10px 0;
-        text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    list-style-type: none;
+
+    li {
+        margin: 0 10px;
+        padding: 0;
         list-style-type: none;
-        li {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        }
+
         a {
             color: $primary;
+
             &:hover {
                 color: white;
                 text-decoration: none;
             }
         }
     }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        padding: 10px 0;
+        list-style-type: none;
+
+        li {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        a {
+            color: $primary;
+
+            &:hover {
+                color: white;
+                text-decoration: none;
+
+        .footer-socmed {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .social-link{
+                margin-right: 10px;
+                &:last-of-type{
+                    margin-right: 0px;
+                }
+            }
+            .social-icon{
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $primary;
+                border-radius: 100px;
+
+                i{
+                    color: white;
+                }
+                transition: 0.4s ease all;
+                &:hover{
+                    transition: 0.4s ease all;
+                    background: white;
+                    transform: scale(1.1);
+                    i{
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+
     .footer-socmed {
         display: flex;
         justify-content: center;
         align-items: center;
-        .footerImg {
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
+
+        .social-link {
+            margin-right: 10px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $primary;
+                border-radius: 100px;
+
+                i {
+                    color: white;
+                }
+
+                transition: 0.4s ease all;
+
+                &:hover {
+                    transition: 0.4s ease all;
+                    background: white;
+                    transform: scale(1.1);
+
+                    i {
+                        color: $primary;
+                    }
+                }
+            }
         }
     }
 }
 
 @media (min-width: 769px) {
     footer {
-        .footer-links {
-            text-align: left;
-            display: flex;
-            justify-content:space-around;
+        flex-direction: row;
+        justify-content: center;
+
+        li {
+            width: 33%;
         }
+
+        .footer-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-align: center;
+            width: 33%;
+
+            li {
+                margin: 0 10px;
+            }
+        }
+
         .footer-socmed {
+            width: 33%;
             justify-content: center;
         }
     }
 }
 
 //HOMEPAGE
-
 .jumbotron {
     background-color: white;
+
     h1 {
         color: $primary;
     }
+
     p, a {
         text-align: center;
+    }
+}
+
+.carousel {
+    .text-slider {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .carousel {
+        position: relative;
+
+        .text-slider {
+            display: block;
+            width: 100%;
+            font-family: $title-font;
+            color: white;
+            text-shadow: 4px 4px 2px rgba(181, 137, 0, 1);
+            position: absolute;
+            left: 0;
+            top: 40%;
+            text-align: center;
+            font-size: 80px;
+            z-index: 99;
+        }
+
+        .carousel-control-next, .carousel-control-prev {
+            z-index: 999;
+          
+        .card-ctn{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            @media screen and (max-width: 768px){
+                flex-direction: column;
+            }
+        }
+        .card {
+            margin: 50px auto;
+            @media screen and (min-width: 769px){
+                width: 33%;
+            }
+            @media screen and (max-width: 768px){
+                width: 100%;
+            }
+            .card-title {
+                text-align: center;
+                font-family: $title-font;
+            }
+        }
     }
 }
 
@@ -119,36 +287,63 @@ footer {
     padding-top: 5px;
 }
 
+//CONTACT
+.contact {
+    p {
+        text-align: center;
+    }
+}
+
 
 //GALLERIES
 .gallery {
-    h1 {
-        color: $primary;
-    }
+
     .intro {
         width: 50%;
         margin: 30px auto;
         text-align: center;
     }
+
+    .card-ctn{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        @media screen and (max-width: 768px){
+            flex-direction: column;
+        }
+    }
+
     .card {
         margin: 50px auto;
+
         .card-title {
             text-align: center;
             font-family: $title-font;
         }
     }
-}
 
-.acts {
-    img {
-        margin: 5px 0;
-        width: 100%;
-        height: auto;
+    .performers {
+        img {
+            margin: 5px auto;
+            display: block;
+            width: 80%;
+            height: auto;
+        }
     }
-}
 
-.events {
-    .card-text {
-        text-align: center;
-    }
-}
+    .acts {
+        img {
+            margin: 5px 0;
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .events {
+            .card-text {
+                text-align: center;
+            }
+        }

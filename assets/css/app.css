@@ -10119,7 +10119,7 @@ main {
 
 h1 {
   font-family: "Bungee", cursive;
-  color: #2AA198;
+  color: #B58900;
   text-align: center;
   margin: 10px;
   padding: 10px;
@@ -10131,6 +10131,10 @@ footer {
 
 nav {
   font-size: large;
+}
+nav .navbar-nav {
+  width: 100%;
+  justify-content: flex-end;
 }
 nav .navbar-brand {
   font-family: "Bungee", cursive;
@@ -10145,11 +10149,33 @@ footer {
   color: #B58900;
   display: flex;
   flex-direction: column;
-}
-footer .footer-links {
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 10px 0;
   text-align: center;
+  list-style-type: none;
+}
+footer li {
+  margin: 0 10px;
+  padding: 0;
+  list-style-type: none;
+}
+footer li a {
+  color: #B58900;
+}
+footer li a:hover {
+  color: white;
+  text-decoration: none;
+}
+footer .footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
   list-style-type: none;
 }
 footer .footer-links li {
@@ -10169,19 +10195,54 @@ footer .footer-socmed {
   justify-content: center;
   align-items: center;
 }
-footer .footer-socmed .footerImg {
+footer .footer-socmed .social-link {
+  margin-right: 10px;
+}
+footer .footer-socmed .social-link:last-of-type {
+  margin-right: 0px;
+}
+footer .footer-socmed .social-icon {
   width: 40px;
   height: 40px;
-  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #B58900;
+  border-radius: 100px;
+  transition: 0.4s ease all;
+}
+footer .footer-socmed .social-icon i {
+  color: white;
+}
+footer .footer-socmed .social-icon:hover {
+  transition: 0.4s ease all;
+  background: white;
+  transform: scale(1.1);
+}
+footer .footer-socmed .social-icon:hover i {
+  color: #B58900;
 }
 
 @media (min-width: 769px) {
+  footer {
+    flex-direction: row;
+    justify-content: center;
+  }
+  footer li {
+    width: 33%;
+  }
   footer .footer-links {
-    text-align: left;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    width: 33%;
+  }
+  footer .footer-links li {
+    margin: 0 10px;
   }
   footer .footer-socmed {
+    width: 33%;
     justify-content: center;
   }
 }
@@ -10195,29 +10256,86 @@ footer .footer-socmed .footerImg {
   text-align: center;
 }
 
+.carousel .text-slider {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .carousel {
+    position: relative;
+  }
+  .carousel .text-slider {
+    display: block;
+    width: 100%;
+    font-family: "Bungee", cursive;
+    color: white;
+    text-shadow: 4px 4px 2px #b58900;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    text-align: center;
+    font-size: 80px;
+    z-index: 99;
+  }
+  .carousel .carousel-control-next, .carousel .carousel-control-prev {
+    z-index: 999;
+  }
+}
 .tab-content {
   margin: 10px;
   padding-top: 5px;
 }
 
-.gallery h1 {
-  color: #B58900;
+.contact p {
+  text-align: center;
 }
+
 .gallery .intro {
   width: 50%;
   margin: 30px auto;
   text-align: center;
 }
+.gallery .card-ctn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .gallery .card-ctn {
+    flex-direction: column;
+  }
+}
 .gallery .card {
   margin: 50px auto;
+}
+@media screen and (min-width: 769px) {
+  .gallery .card {
+    width: 33%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .gallery .card {
+    width: 100%;
+  }
 }
 .gallery .card .card-title {
   text-align: center;
   font-family: "Bungee", cursive;
 }
 
+.performers img {
+  margin: 5px auto;
+  display: block;
+  width: 80%;
+  height: auto;
+}
+
 .acts img {
   margin: 5px 0;
+  display: block;
   width: 100%;
   height: auto;
 }

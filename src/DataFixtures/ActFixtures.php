@@ -20,7 +20,7 @@ class ActFixtures extends Fixture
             by their joy and fall back into childhood.'
         );
         $act->setDuration('10');
-        $act->setPicture('img/act/laugh.jpg');
+        $act->setPicture('laugh.jpg');
 
         $manager->persist($act);
         $this->addReference('Laugh', $act);
@@ -33,7 +33,7 @@ class ActFixtures extends Fixture
             discover a wonderful world limited only by your imagination.'
         );
         $act->setDuration('25');
-        $act->setPicture('img/act/dream.jpg');
+        $act->setPicture('dream.jpg');
 
         $manager->persist($act);
         $this->addReference('Dream', $act);
@@ -46,7 +46,7 @@ class ActFixtures extends Fixture
             and achieve the impossible with a grace rarely found in humankind.'
         );
         $act->setDuration('15');
-        $act->setPicture('img/act/marvel.jpg');
+        $act->setPicture('marvel.jpg');
 
         $manager->persist($act);
         $this->addReference('Marvel', $act);
@@ -58,7 +58,7 @@ class ActFixtures extends Fixture
             $act->setName($faker->word);
             $act->setDescription($faker->text($maxNbChars = 300));
             $act->setDuration($faker->numberBetween($min = 5, $max = 25));
-            $act->setPicture($faker->imageUrl($width = 640, $height = 480, 'abstract'));
+            $act->setPicture('tent.jpg');
 
             $manager->persist($act);
             $this->addReference('act_' . $i, $act);

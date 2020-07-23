@@ -15,15 +15,15 @@ class HomeController extends AbstractController
      */
     public function homepage() : Response
     {
-        return $this->render('homepage.html.twig');
+        return $this->render('home/homepage.html.twig');
     }
 
     /**
      * @return Response
-     * @Route("/about", name="about_us")
+     * @Route("/about", name="about")
      */
     public function aboutUs() : Response
     {
-        return $this->render('about.html.twig');
+        return $this->render('home/about.html.twig');
     }
 }

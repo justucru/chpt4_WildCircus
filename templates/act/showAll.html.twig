@@ -9,22 +9,24 @@
             that never fail to dazzle and wonder.
             Not all acts are performed at every show - every show is unique !
         </p>
-        {% for act in acts %}
-            <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
-                <div class="card-header">{{ act.duration }} min</div>
-                <div class="card-body">
-                    <h4 class="card-title">{{ act.name }}</h4>
-                    <img src="{{ asset('{{ act.picture }}') }}>
-                    <br>
-                    <p class="card-text">{{ act.description }}</p>
-                    <p>Associated performers :</p>
-                    <ul>
-                        {% for performer in act.performers %}
-                            <li>{{ performer.name }}</li>
-                        {% endfor %}
-                    </ul>
+        <div class="card-ctn">
+            {% for act in acts %}
+                <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+                    <div class="card-header">{{ act.duration }} min</div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ act.name }}</h4>
+                        <img src="{{ asset('/uploads/performers/' ~ act.picture) }}">
+                        <br>
+                        <p class="card-text">{{ act.description }}</p>
+                        <p>Associated performers :</p>
+                        <ul>
+                            {% for performer in act.performers %}
+                                <li>{{ performer.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
