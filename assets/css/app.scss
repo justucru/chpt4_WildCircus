@@ -149,7 +149,6 @@ footer {
     }
 
     //HOMEPAGE
-
     .jumbotron {
         background-color: white;
 
@@ -159,6 +158,34 @@ footer {
 
         p, a {
             text-align: center;
+        }
+    }
+
+    .carousel {
+        .text-slider {
+            display: none;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .carousel {
+            position: relative;
+            .text-slider {
+                display: block;
+                width: 100%;
+                font-family: $title-font;
+                color: white;
+                text-shadow: 4px 4px 2px rgba(181,137,0,1);
+                position: absolute;
+                left: 0;
+                top: 40%;
+                text-align: center;
+                font-size: 80px;
+                z-index: 99;
+            }
+            .carousel-control-next, .carousel-control-prev {
+                z-index: 999;
+            }
         }
     }
 

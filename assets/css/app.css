@@ -10230,6 +10230,31 @@ footer .footer-socmed .footerImg {
   text-align: center;
 }
 
+.carousel .text-slider {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .carousel {
+    position: relative;
+  }
+  .carousel .text-slider {
+    display: block;
+    width: 100%;
+    font-family: "Bungee", cursive;
+    color: white;
+    text-shadow: 4px 4px 2px #b58900;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    text-align: center;
+    font-size: 80px;
+    z-index: 99;
+  }
+  .carousel .carousel-control-next, .carousel .carousel-control-prev {
+    z-index: 999;
+  }
+}
 .tab-content {
   margin: 10px;
   padding-top: 5px;
