@@ -4,9 +4,10 @@ namespace App\Form;
 
 use App\Entity\Act;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichFileType;
+use Symfony\Component\Validator\Constraints\File;
 
 class ActType extends AbstractType
 {
@@ -16,12 +17,18 @@ class ActType extends AbstractType
             ->add('name')
             ->add('description')
             ->add('duration')
-            ->add('pictureFile', VichFileType::class, [
+            ->add('picture', FileType::class, [
+                'mapped' => false,
                 'required' => false,
-                'allow_delete' => false, // True to display a delete checkbox
-                'download_uri' => false, // True to display a link of the picture
-                'label' => "Image",
-                'attr' => ['placeholder' => 'Add an image']
+                'constraints' => [
+                    new File([
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                        ],
+                        'mimeTypesMessage' => 'Please upload an image in JPG, JPEG or PNG format',
+                    ])
+                ]
             ])
         ;
     }

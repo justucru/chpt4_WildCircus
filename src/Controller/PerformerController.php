@@ -6,9 +6,12 @@ use App\Entity\Performer;
 use App\Form\PerformerType;
 use App\Repository\PerformerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Service\FileUploader;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @Route("/performer")
@@ -38,13 +41,21 @@ class PerformerController extends AbstractController
     /**
      * @Route("/new", name="performer_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
         $performer = new Performer();
         $form = $this->createForm(PerformerType::class, $performer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $pictureFile */
+            $pictureFile = $form->get('picture')->getData();
+
+            if ($pictureFile) {
+                $pictureFileName = $fileUploader->upload($pictureFile);
+                $performer->setPicture($pictureFileName);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($performer);
             $entityManager->flush();
@@ -71,12 +82,20 @@ class PerformerController extends AbstractController
     /**
      * @Route("/{id}/edit", name="performer_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Performer $performer): Response
+    public function edit(Request $request, Performer $performer, FileUploader $fileUploader): Response
     {
         $form = $this->createForm(PerformerType::class, $performer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $pictureFile */
+            $pictureFile = $form->get('picture')->getData();
+
+            if ($pictureFile) {
+                $pictureFileName = $fileUploader->upload($pictureFile);
+                $performer->setPicture($pictureFileName);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('performer_index');
