@@ -20,10 +20,19 @@ class HomeController extends AbstractController
 
     /**
      * @return Response
-     * @Route("/about", name="about_us")
+     * @Route("/about", name="about")
      */
     public function aboutUs() : Response
     {
         return $this->render('about.html.twig');
+    }
+
+    /**
+     * @return Response
+     * @Route("/contact", name="contact")
+     */
+    public function contactUs() : Response
+    {
+        return $this->render('contact.html.twig');
     }
 }
