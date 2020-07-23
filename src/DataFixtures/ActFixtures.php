@@ -6,6 +6,7 @@ namespace App\DataFixtures;
 use App\Entity\Act;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Faker;
 
 class ActFixtures extends Fixture
 {
@@ -22,6 +23,7 @@ class ActFixtures extends Fixture
         $act->setPicture('img/act/laugh.jpg');
 
         $manager->persist($act);
+        $this->addReference('Laugh', $act);
 
         $act = new Act();
         $act->setName("Dream");
@@ -34,6 +36,7 @@ class ActFixtures extends Fixture
         $act->setPicture('img/act/dream.jpg');
 
         $manager->persist($act);
+        $this->addReference('Dream', $act);
 
         $act = new Act();
         $act->setName("Marvel");
@@ -46,6 +49,21 @@ class ActFixtures extends Fixture
         $act->setPicture('img/act/marvel.jpg');
 
         $manager->persist($act);
+        $this->addReference('Marvel', $act);
+
+        $faker = Faker\Factory::create('en_US');
+
+        for ($i = 3; $i < 13; $i++) {
+            $act = new Act();
+            $act->setName($faker->word);
+            $act->setDescription($faker->text($maxNbChars = 300));
+            $act->setDuration($faker->numberBetween($min = 5, $max = 25));
+            $act->setPicture($faker->imageUrl($width = 640, $height = 480, 'abstract'));
+
+            $manager->persist($act);
+            $this->addReference('act_' . $i, $act);
+
+        }
 
         $manager->flush();
 

@@ -13,16 +13,24 @@ class EventFixtures extends Fixture
     {
         $event = new Event();
         $event->setCity("Lyon");
-        $event->setAddress("Place de la Confluence");
+        $event->setAddress("Place François Mitterand");
         $event->setDate(new \DateTime('2020-08-14'));
         $event->setTime(new \DateTime('17:00'));
 
         $manager->persist($event);
 
         $event = new Event();
-        $event->setCity("Istanbul");
-        $event->setAddress("Atatürk Caddesi");
+        $event->setCity("Prague");
+        $event->setAddress("Velkoprevorské Namesti");
         $event->setDate(new \DateTime('2020-09-27'));
+        $event->setTime(new \DateTime('19:00'));
+
+        $manager->persist($event);
+
+        $event = new Event();
+        $event->setCity("Istanbul");
+        $event->setAddress("Atatürk Bulvari");
+        $event->setDate(new \DateTime('2020-10-04'));
         $event->setTime(new \DateTime('15:30'));
 
         $manager->persist($event);
@@ -32,6 +40,14 @@ class EventFixtures extends Fixture
         $event->setAddress("Blue Willow Crescent");
         $event->setDate(new \DateTime('2020-11-03'));
         $event->setTime(new \DateTime('18:00'));
+
+        $manager->persist($event);
+
+        $event = new Event();
+        $event->setCity("San Francisco");
+        $event->setAddress("Parnassus Avenue");
+        $event->setDate(new \DateTime('2020-12-31'));
+        $event->setTime(new \DateTime('16:00'));
 
         $manager->persist($event);
 

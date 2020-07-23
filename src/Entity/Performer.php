@@ -6,9 +6,12 @@ use App\Repository\PerformerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=PerformerRepository::class)
+ * @Vich\Uploadable
  */
 class Performer
 {
@@ -35,14 +38,30 @@ class Performer
     private $picture;
 
     /**
+     * @Vich\UploadableField(mapping="performer_image", fileNameProperty="picture")
+     * @var File | null
+     */
+    private $pictureFile;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $biography;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Act::class, mappedBy="performers")
+     * @ORM\ManyToMany(targetEntity=Act::class,
+     *     mappedBy="performers",
+     *     fetch="EXTRA_LAZY",
+     *     cascade={"persist"}
+     *     )
      */
     private $acts;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     * @var \DateTimeInterface|null
+     */
+    private $updatedAt;
 
     public function __construct()
     {
@@ -88,6 +107,25 @@ class Performer
         $this->picture = $picture;
 
         return $this;
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setPictureFile(?File $pictureFile = null): void
+    {
+        $this->pictureFile = $pictureFile;
+
+        if (null !== $pictureFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getPictureFile(): ?File
+    {
+        return $this->pictureFile;
     }
 
     public function getBiography(): ?string
