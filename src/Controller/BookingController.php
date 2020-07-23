@@ -9,6 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -30,7 +32,7 @@ class BookingController extends AbstractController
     /**
      * @Route("/new", name="booking_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, MailerInterface $mailer): Response
     {
         $booking = new Booking();
         $form = $this->createForm(BookingType::class, $booking);
@@ -41,7 +43,25 @@ class BookingController extends AbstractController
             $entityManager->persist($booking);
             $entityManager->flush();
 
-            return $this->redirectToRoute('booking_index');
+            $email = (new Email())
+                ->from($booking->getEmail())
+                ->to('admin@wildcircus.com')
+                ->subject('Your tickets to the Wild Circus!')
+                ->html('Dear ' . $booking->getName() . ',<br>
+               Please find enclosed your ' . $booking->getNbTickets() . '
+               to our show in ' . $booking->getEvent()->getCity() . '. <br>
+                Thank you for your booking! We hope you enjoy the show! <br>
+                The Wild Circus',
+            'text/plain');
+
+            $mailer->send($email);
+            $this->addFlash(
+                'success',
+                'We have received your booking request.
+                    Check your email for confirmation.'
+            );
+
+            return $this->redirectToRoute('booking_new');
         }
 
         return $this->render('booking/new.html.twig', [
