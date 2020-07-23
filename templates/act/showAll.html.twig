@@ -5,21 +5,22 @@
 {% block body %}
     <div class="gallery acts">
         <h1>Our Acts</h1>
-        <p class="intro">bla bla bla blabla bla bla blabla bla bla bla
-            bla bla bla blabla bla bla blabla bla bla bla
-            bla bla bla blabla bla bla bla
+        <p class="intro">We offer a wide variety of acts, all 100% cruelty-free,
+            that never fail to dazzle and wonder.
+            Not all acts are performed at every show - every show is unique !
         </p>
         {% for act in acts %}
             <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
                 <div class="card-header">{{ act.duration }} min</div>
                 <div class="card-body">
                     <h4 class="card-title">{{ act.name }}</h4>
-                    <img src="{{ asset('{{ act.picture }}') }}">
+                    <img src="{{ asset('{{ act.picture }}') }}>
+                    <br>
                     <p class="card-text">{{ act.description }}</p>
                     <p>Associated performers :</p>
                     <ul>
                         {% for performer in act.performers %}
-                            <a href="#"<li>{{ performer.name }}</li></a>
+                            <li>{{ performer.name }}</li>
                         {% endfor %}
                     </ul>
                 </div>
