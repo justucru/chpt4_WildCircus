@@ -10222,4 +10222,8 @@ footer .footer-socmed .footerImg {
   height: auto;
 }
 
+.events .card-text {
+  text-align: center;
+}
+
 /*# sourceMappingURL=app.css.map */

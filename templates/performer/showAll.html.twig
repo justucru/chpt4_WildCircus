@@ -15,11 +15,12 @@
             <div class="card-body">
                 <h4 class="card-title">{{ performer.name }}</h4>
                 <img src="{{ asset('{{ performer.picture }}') }}">
+                <br>
                 <p class="card-text">{{ performer.biography }}</p>
                 <p>Associated acts :</p>
                 <ul>
                 {% for act in performer.acts %}
-                    <a href="#"<li>{{ act.name }}</li></a>
+                   <li>{{ act.name }}</li>
                 {% endfor %}
                 </ul>
             </div>
