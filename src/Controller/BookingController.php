@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Booking;
 use App\Form\BookingType;
 use App\Repository\BookingRepository;
+use Endroid\QrCode\Factory\QrCodeFactory;
+use Endroid\QrCodeBundle\Response\QrCodeResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,6 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use Endroid\QrCode\Factory\QrCodeFactoryInterface;
 
 /**
  * @Route("/booking")
@@ -43,6 +46,14 @@ class BookingController extends AbstractController
             $entityManager->persist($booking);
             $entityManager->flush();
 
+            //QR CODE
+            //$qrCode = [];
+            //$qrCodeFactory = new QrCodeFactory();
+            //for ($i = 0; $i < $booking->getNbTickets(); $i++) {
+            //    $qrCode[$i] = $qrCodeFactory->create('QR_Code' . $i, ['size' => 200]);
+            //    $response[$i] = new QrCodeResponse($qrCode[$i]);
+            //}
+
             $email = (new Email())
                 ->from($booking->getEmail())
                 ->to('admin@wildcircus.com')
@@ -51,7 +62,7 @@ class BookingController extends AbstractController
                Please find enclosed your ' . $booking->getNbTickets() . '
                to our show in ' . $booking->getEvent()->getCity() . '. <br>
                 Thank you for your booking! We hope you enjoy the show! <br>
-                The Wild Circus',
+                The Wild Circus <br>',
             'text/plain');
 
             $mailer->send($email);
@@ -115,4 +126,5 @@ class BookingController extends AbstractController
 
         return $this->redirectToRoute('booking_index');
     }
+
 }
