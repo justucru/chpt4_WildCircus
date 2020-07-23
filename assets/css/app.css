@@ -10119,7 +10119,7 @@ main {
 
 h1 {
   font-family: "Bungee", cursive;
-  color: #2AA198;
+  color: #B58900;
   text-align: center;
   margin: 10px;
   padding: 10px;
@@ -10156,6 +10156,13 @@ footer li {
   margin: 0 10px;
   padding: 0;
   list-style-type: none;
+}
+footer li a {
+  color: #B58900;
+}
+footer li a:hover {
+  color: white;
+  text-decoration: none;
 }
 footer .footer-links {
   display: flex;
@@ -10228,9 +10235,10 @@ footer .footer-socmed .footerImg {
   padding-top: 5px;
 }
 
-.gallery h1 {
-  color: #B58900;
+.contact p {
+  text-align: center;
 }
+
 .gallery .intro {
   width: 50%;
   margin: 30px auto;

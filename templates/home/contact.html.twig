@@ -1,6 +1,20 @@
-{% extends '../base.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact Us{% endblock title %}
 
 {% block body %}
 
+    <div class="container-fluid contact">
+        <h1>Contact</h1>
 
+        <p>Questions? Suggestions?<br>
+            Tell us what's on your mind!</p>
+
+        <div>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary">{{ button_label|default('Send') }}</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
 {% endblock %}

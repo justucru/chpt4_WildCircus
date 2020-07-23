@@ -30,7 +30,7 @@ main {
 
 h1 {
     font-family: $title-font;
-    color: $success;
+    color: $primary;
     text-align: center;
     margin: 10px;
     padding: 10px;
@@ -43,10 +43,12 @@ footer {
 //NAVBAR
 nav {
     font-size: large;
+
     .navbar-brand {
         font-family: $title-font;
         font-size: larger;
     }
+
     .navbar-collapse {
         font-weight: bold;
     }
@@ -64,123 +66,144 @@ footer {
     padding: 10px 0;
     text-align: center;
     list-style-type: none;
+
     li {
         margin: 0 10px;
         padding: 0;
         list-style-type: none;
-        a {
-            color: $primary;
-            &:hover {
-                color: white;
-                text-decoration: none;
-            }
-    }
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 0;
-        padding: 10px 0;
-        list-style-type: none;
-        li {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        }
-        a {
-            color: $primary;
-            &:hover {
-                color: white;
-                text-decoration: none;
-            }
-        }
-    }
-    .footer-socmed {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .footerImg {
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
-        }
-    }
-}
 
-@media (min-width: 769px) {
-    footer {
-        flex-direction: row;
-        justify-content: center;
-        li {
-            width: 33%;
+        a {
+            color: $primary;
+
+            &:hover {
+                color: white;
+                text-decoration: none;
+            }
         }
+    }
         .footer-links {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             text-align: center;
-            width: 33%;
+            margin: 0;
+            padding: 10px 0;
+            list-style-type: none;
+
             li {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+
+            a {
+                color: $primary;
+
+                &:hover {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .footer-socmed {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .footerImg {
+                width: 40px;
+                height: 40px;
                 margin: 0 10px;
             }
         }
-        .footer-socmed {
-            width: 33%;
+    }
+
+    @media (min-width: 769px) {
+        footer {
+            flex-direction: row;
             justify-content: center;
+
+            li {
+                width: 33%;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                text-align: center;
+                width: 33%;
+
+                li {
+                    margin: 0 10px;
+                }
+            }
+
+            .footer-socmed {
+                width: 33%;
+                justify-content: center;
+            }
         }
     }
-}
 
-//HOMEPAGE
+    //HOMEPAGE
 
-.jumbotron {
-    background-color: white;
-    h1 {
-        color: $primary;
-    }
-    p, a {
-        text-align: center;
-    }
-}
+    .jumbotron {
+        background-color: white;
 
-//ABOUT
-.tab-content {
-    margin: 10px;
-    padding-top: 5px;
-}
+        h1 {
+            color: $primary;
+        }
 
-
-//GALLERIES
-.gallery {
-    h1 {
-        color: $primary;
-    }
-    .intro {
-        width: 50%;
-        margin: 30px auto;
-        text-align: center;
-    }
-    .card {
-        margin: 50px auto;
-        .card-title {
+        p, a {
             text-align: center;
-            font-family: $title-font;
         }
     }
-}
 
-.acts {
-    img {
-        margin: 5px 0;
-        width: 100%;
-        height: auto;
+    //ABOUT
+    .tab-content {
+        margin: 10px;
+        padding-top: 5px;
     }
-}
 
-.events {
-    .card-text {
-        text-align: center;
+    //CONTACT
+    .contact {
+        p {
+            text-align: center;
+        }
     }
-}
+
+    //GALLERIES
+    .gallery {
+
+        .intro {
+            width: 50%;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .card {
+            margin: 50px auto;
+
+            .card-title {
+                text-align: center;
+                font-family: $title-font;
+            }
+        }
+    }
+
+    .acts {
+        img {
+            margin: 5px 0;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .events {
+        .card-text {
+            text-align: center;
+        }
+    }
