@@ -28,6 +28,14 @@ main {
     flex: 1 0 auto; //sticky footer
 }
 
+h1 {
+    font-family: $title-font;
+    color: $success;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+
 footer {
     flex-shrink: 0; //sticky footer
 }
@@ -90,5 +98,57 @@ footer {
         .footer-socmed {
             justify-content: center;
         }
+    }
+}
+
+//HOMEPAGE
+
+.jumbotron {
+    background-color: white;
+    h1 {
+        color: $primary;
+    }
+    p, a {
+        text-align: center;
+    }
+}
+
+//ABOUT
+.tab-content {
+    margin: 10px;
+    padding-top: 5px;
+}
+
+
+//GALLERIES
+.gallery {
+    h1 {
+        color: $primary;
+    }
+    .intro {
+        width: 50%;
+        margin: 30px auto;
+        text-align: center;
+    }
+    .card {
+        margin: 50px auto;
+        .card-title {
+            text-align: center;
+            font-family: $title-font;
+        }
+    }
+}
+
+.acts {
+    img {
+        margin: 5px 0;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.events {
+    .card-text {
+        text-align: center;
     }
 }

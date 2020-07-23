@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event index{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <h1>Event index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Program</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.id }}</td>
+                <td>{{ event.city }}</td>
+                <td>{{ event.address }}</td>
+                <td>{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+                <td>{{ event.time ? event.time|date('H:i:s') : '' }}</td>
+                <td>{% for act in event.acts %}
+                        {{ act.name }}<br>
+                    {% endfor %}
+                </td>
+                <td>
+                    <a href="{{ path('event_edit', {'id': event.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('event_new') }}">Create new</a>
+    <br><br>
+    <a href="{{ path('admin_index') }}">Back to admin</a>
+</div>
+{% endblock %}

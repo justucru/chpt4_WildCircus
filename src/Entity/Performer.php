@@ -6,6 +6,7 @@ use App\Repository\PerformerRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass=PerformerRepository::class)
@@ -40,7 +41,11 @@ class Performer
     private $biography;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Act::class, mappedBy="performers")
+     * @ORM\ManyToMany(targetEntity=Act::class,
+     *     mappedBy="performers",
+     *     fetch="EXTRA_LAZY",
+     *     cascade={"persist"}
+     *     )
      */
     private $acts;
 

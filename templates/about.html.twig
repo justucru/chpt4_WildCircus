@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>About the Wild Circus</h1>
+
+        <p>In 1989, the members of the Lacroix family wished to create a new kind of circus,
+            free from the ancient standard practices,
+            in order to create of completely new form of circus entertainment.
+        </p>
+        <p>The Wild Circus was born.</p>
+        <p>For 30 years, the Wild Circus has put together more than 15 different shows
+            that have delighted millions of audience members throughout Europe.
+        </p>
+        <p>This level of excellence has been achieved through
+            our three key commitments to our audience :
+        </p>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#dedication"><strong>#1</strong> Constant Dedication</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#nocruelty"><strong>#2</strong> 100% Cruelty-Free</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#accessibility"><strong>#3</strong> Accessibility for All</a>
+            </li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade show active" id="dedication">
+                <p>Our performers and our crew are at your service.</p>
+            </div>
+            <div class="tab-pane fade" id="nocruelty">
+                <p>No animals are used in our shows.</p>
+            </div>
+            <div class="tab-pane fade" id="accessibility">
+                <p>We can accomodate people with all types of disabilities.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

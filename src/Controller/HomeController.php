@@ -11,10 +11,19 @@ class HomeController extends AbstractController
 {
     /**
      * @return Response
-     * @Route("/", name="index")
+     * @Route("/", name="app_index")
      */
     public function homepage() : Response
     {
         return $this->render('homepage.html.twig');
+    }
+
+    /**
+     * @return Response
+     * @Route("/about", name="about_us")
+     */
+    public function aboutUs() : Response
+    {
+        return $this->render('about.html.twig');
     }
 }

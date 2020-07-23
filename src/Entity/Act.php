@@ -6,6 +6,7 @@ use App\Repository\ActRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass=ActRepository::class)
@@ -40,7 +41,13 @@ class Act
     private $picture;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Performer::class, inversedBy="acts")
+     * @ORM\ManyToMany(
+     *     targetEntity=Performer::class,
+     *     inversedBy="acts",
+     *     fetch="EXTRA_LAZY",
+     *     orphanRemoval=true,
+     *     cascade={"persist"}
+     *     )
      */
     private $performers;
 
