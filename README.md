@@ -20,3 +20,11 @@
 * Symfony 4.4 / PHP 7.4
 * Sass
 * Bootstrap / Bootswatch
+* Mailer / MailTrap
+
+## TODO
+
+* finish QR code integration in confirmation email
+* hide password characters in admin info edit form
+* add map on events page
+* internationalization
