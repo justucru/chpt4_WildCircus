@@ -23,10 +23,9 @@ class PerformerType extends AbstractType
                 'required' => false,
                 'constraints' => [
                     new File([
-                        'maxSize' => '1024k',
                         'mimeTypes' => [
-                            'application/jpg',
-                            'application/png',
+                            'image/jpeg',
+                            'image/png',
                         ],
                         'mimeTypesMessage' => 'Please upload an image in JPG, JPEG or PNG format',
                     ])
@@ -34,7 +33,7 @@ class PerformerType extends AbstractType
             ])
             ->add('biography')
             ->add('acts', EntityType::class, [
-                'label' => 'Program',
+                'label' => 'Associated acts',
                 'class' => Act::class,
                 'choice_label' => function (Act $act) {
                     return $act->getId() . ' - ' . $act->getName();

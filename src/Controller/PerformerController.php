@@ -48,7 +48,7 @@ class PerformerController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var UploadedFile $brochureFile */
+            /** @var UploadedFile $pictureFile */
             $pictureFile = $form->get('picture')->getData();
 
             if ($pictureFile) {
@@ -82,12 +82,20 @@ class PerformerController extends AbstractController
     /**
      * @Route("/{id}/edit", name="performer_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Performer $performer): Response
+    public function edit(Request $request, Performer $performer, FileUploader $fileUploader): Response
     {
         $form = $this->createForm(PerformerType::class, $performer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $pictureFile */
+            $pictureFile = $form->get('picture')->getData();
+
+            if ($pictureFile) {
+                $pictureFileName = $fileUploader->upload($pictureFile);
+                $performer->setPicture($pictureFileName);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('performer_index');
