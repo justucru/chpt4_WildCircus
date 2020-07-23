@@ -14,7 +14,7 @@
                 <div class="card-header">{{ act.duration }} min</div>
                 <div class="card-body">
                     <h4 class="card-title">{{ act.name }}</h4>
-                    <img src="{{ asset('{{ act.picture }}') }}>
+                    <img src="{{ asset('/uploads/performers/' ~ act.picture) }}">
                     <br>
                     <p class="card-text">{{ act.description }}</p>
                     <p>Associated performers :</p>
