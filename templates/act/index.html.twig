@@ -24,12 +24,7 @@
                     <td>{{ act.name }}</td>
                     <td>{{ act.description }}</td>
                     <td>{{ act.duration }} min</td>
-                    <td>{% if act.picture is not null %}
-                            ok
-                        {% else %}
-                            no
-                        {% endif %}
-                    </td>
+                    <td>{{ act.picture }}</td>
                     <td>
                         <a href="{{ path('act_edit', {'id': act.id}) }}">edit</a>
                     </td>
