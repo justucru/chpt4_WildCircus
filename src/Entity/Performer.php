@@ -42,7 +42,7 @@ class Performer
 
     /**
      * @ORM\ManyToMany(targetEntity=Act::class,
-     *     mappedBy="img",
+     *     mappedBy="performers",
      *     fetch="EXTRA_LAZY",
      *     cascade={"persist"}
      *     )
