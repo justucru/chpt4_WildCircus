@@ -10119,7 +10119,7 @@ main {
 
 h1 {
   font-family: "Bungee", cursive;
-  color: #2AA198;
+  color: #B58900;
   text-align: center;
   margin: 10px;
   padding: 10px;
@@ -10145,11 +10145,33 @@ footer {
   color: #B58900;
   display: flex;
   flex-direction: column;
-}
-footer .footer-links {
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 10px 0;
   text-align: center;
+  list-style-type: none;
+}
+footer li {
+  margin: 0 10px;
+  padding: 0;
+  list-style-type: none;
+}
+footer li a {
+  color: #B58900;
+}
+footer li a:hover {
+  color: white;
+  text-decoration: none;
+}
+footer .footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
   list-style-type: none;
 }
 footer .footer-links li {
@@ -10176,12 +10198,25 @@ footer .footer-socmed .footerImg {
 }
 
 @media (min-width: 769px) {
+  footer {
+    flex-direction: row;
+    justify-content: center;
+  }
+  footer li {
+    width: 33%;
+  }
   footer .footer-links {
-    text-align: left;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    width: 33%;
+  }
+  footer .footer-links li {
+    margin: 0 10px;
   }
   footer .footer-socmed {
+    width: 33%;
     justify-content: center;
   }
 }
@@ -10195,14 +10230,40 @@ footer .footer-socmed .footerImg {
   text-align: center;
 }
 
+.carousel .text-slider {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .carousel {
+    position: relative;
+  }
+  .carousel .text-slider {
+    display: block;
+    width: 100%;
+    font-family: "Bungee", cursive;
+    color: white;
+    text-shadow: 4px 4px 2px #b58900;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    text-align: center;
+    font-size: 80px;
+    z-index: 99;
+  }
+  .carousel .carousel-control-next, .carousel .carousel-control-prev {
+    z-index: 999;
+  }
+}
 .tab-content {
   margin: 10px;
   padding-top: 5px;
 }
 
-.gallery h1 {
-  color: #B58900;
+.contact p {
+  text-align: center;
 }
+
 .gallery .intro {
   width: 50%;
   margin: 30px auto;
