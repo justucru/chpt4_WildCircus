@@ -8,22 +8,24 @@
         <p class="intro">We perform all around the world, all year.
             See below if our next ones are near you !
         </p>
-        {% for event in events %}
-            <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
-                <div class="card-header">{{ event.date|date('d M Y') }}</div>
-                <div class="card-body">
-                    <h4 class="card-title">{{ event.city }}</h4>
-                    {# map #}
-                    <p class="card-text">{{ event.address }}</p>
-                    <p class="card-text"><strong>{{ event.time|date('H:i') }}</strong></p>
-                    <p>Program :</p>
-                    <ul>
-                        {% for act in event.acts %}
-                            <li>{{ act.name }}</li>
-                        {% endfor %}
-                    </ul>
+        <div class="card-ctn">
+            {% for event in events %}
+                <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+                    <div class="card-header">{{ event.date|date('d M Y') }}</div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ event.city }}</h4>
+                        {# map #}
+                        <p class="card-text">{{ event.address }}</p>
+                        <p class="card-text"><strong>{{ event.time|date('H:i') }}</strong></p>
+                        <p>Program :</p>
+                        <ul>
+                            {% for act in event.acts %}
+                                <li>{{ act.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
