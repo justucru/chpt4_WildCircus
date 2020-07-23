@@ -5,7 +5,9 @@ namespace App\Controller;
 use App\Entity\Act;
 use App\Form\ActType;
 use App\Repository\ActRepository;
+use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -38,13 +40,20 @@ class ActController extends AbstractController
     /**
      * @Route("/new", name="act_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
         $act = new Act();
         $form = $this->createForm(ActType::class, $act);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $pictureFile */
+            $pictureFile = $form->get('picture')->getData();
+
+            if ($pictureFile) {
+                $pictureFileName = $fileUploader->upload($pictureFile);
+                $act->setPicture($pictureFileName);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($act);
             $entityManager->flush();
@@ -71,12 +80,20 @@ class ActController extends AbstractController
     /**
      * @Route("/{id}/edit", name="act_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Act $act): Response
+    public function edit(Request $request, Act $act, FileUploader $fileUploader): Response
     {
         $form = $this->createForm(ActType::class, $act);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            /** @var UploadedFile $pictureFile */
+            $pictureFile = $form->get('picture')->getData();
+
+            if ($pictureFile) {
+                $pictureFileName = $fileUploader->upload($pictureFile);
+                $act->setPicture($pictureFileName);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('act_index');

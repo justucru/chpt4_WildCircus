@@ -6,9 +6,10 @@ use App\Entity\Act;
 use App\Entity\Performer;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichFileType;
+use Symfony\Component\Validator\Constraints\File;
 
 class PerformerType extends AbstractType
 {
@@ -17,16 +18,22 @@ class PerformerType extends AbstractType
         $builder
             ->add('name')
             ->add('nationality')
-            ->add('pictureFile', VichFileType::class, [
+            ->add('picture', FileType::class, [
+                'mapped' => false,
                 'required' => false,
-                'allow_delete' => false, // True to display a delete checkbox
-                'download_uri' => false, // True to display a link of the picture
-                'label' => "Image",
-                'attr' => ['placeholder' => 'Add an image']
+                'constraints' => [
+                    new File([
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                        ],
+                        'mimeTypesMessage' => 'Please upload an image in JPG, JPEG or PNG format',
+                    ])
+                ]
             ])
             ->add('biography')
             ->add('acts', EntityType::class, [
-                'label' => 'Program',
+                'label' => 'Associated acts',
                 'class' => Act::class,
                 'choice_label' => function (Act $act) {
                     return $act->getId() . ' - ' . $act->getName();
