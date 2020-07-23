@@ -49,7 +49,13 @@ class Act
     private $pictureFile;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Performer::class, inversedBy="acts")
+     * @ORM\ManyToMany(
+     *     targetEntity=Performer::class,
+     *     inversedBy="acts",
+     *     fetch="EXTRA_LAZY",
+     *     orphanRemoval=true,
+     *     cascade={"persist"}
+     *     )
      */
     private $performers;
 

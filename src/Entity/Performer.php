@@ -49,7 +49,11 @@ class Performer
     private $biography;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Act::class, mappedBy="performers")
+     * @ORM\ManyToMany(targetEntity=Act::class,
+     *     mappedBy="performers",
+     *     fetch="EXTRA_LAZY",
+     *     cascade={"persist"}
+     *     )
      */
     private $acts;
 
