@@ -10326,8 +10326,16 @@ footer .footer-socmed .social-icon:hover i {
   font-family: "Bungee", cursive;
 }
 
+.performers img {
+  margin: 5px auto;
+  display: block;
+  width: 80%;
+  height: auto;
+}
+
 .acts img {
   margin: 5px 0;
+  display: block;
   width: 100%;
   height: auto;
 }
