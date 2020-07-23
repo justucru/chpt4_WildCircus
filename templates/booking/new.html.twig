@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Booking{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <h1>Book your tickets</h1>
+
+    <p>Wild Circus strives for excellence in all aspects.
+    </p>
+    <p>We are therefore committed to providing fair wages
+        to our performers and crew while keeping prices affordable for all.</p>
+
+    {{ include('booking/_form.html.twig') }}
+</div>
+{% endblock %}
