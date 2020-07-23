@@ -43,7 +43,10 @@ footer {
 //NAVBAR
 nav {
     font-size: large;
-
+    .navbar-nav {
+        width: 100%;
+        justify-content: flex-end;
+    }
     .navbar-brand {
         font-family: $title-font;
         font-size: larger;
@@ -111,12 +114,35 @@ footer {
             display: flex;
             justify-content: center;
             align-items: center;
-
-            .footerImg {
+            .social-link{
+                margin-right: 10px;
+                &:last-of-type{
+                    margin-right: 0px;
+                }
+            }
+            .social-icon{
                 width: 40px;
                 height: 40px;
-                margin: 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: $primary;
+                border-radius: 100px;
+
+                i{
+                    color: white;
+                }
+                transition: 0.4s ease all;
+                &:hover{
+                    transition: 0.4s ease all;
+                    background: white;
+                    transform: scale(1.1);
+                    i{
+                        color: $primary;
+                    }
+                }
             }
+
         }
     }
 
@@ -211,10 +237,25 @@ footer {
             margin: 30px auto;
             text-align: center;
         }
-
+        .card-ctn{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            @media screen and (max-width: 768px){
+                flex-direction: column;
+            }
+        }
         .card {
             margin: 50px auto;
-
+            @media screen and (min-width: 769px){
+                width: 33%;
+            }
+            @media screen and (max-width: 768px){
+                width: 100%;
+            }
             .card-title {
                 text-align: center;
                 font-family: $title-font;

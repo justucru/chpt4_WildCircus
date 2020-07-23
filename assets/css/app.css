@@ -10132,6 +10132,10 @@ footer {
 nav {
   font-size: large;
 }
+nav .navbar-nav {
+  width: 100%;
+  justify-content: flex-end;
+}
 nav .navbar-brand {
   font-family: "Bungee", cursive;
   font-size: larger;
@@ -10191,10 +10195,32 @@ footer .footer-socmed {
   justify-content: center;
   align-items: center;
 }
-footer .footer-socmed .footerImg {
+footer .footer-socmed .social-link {
+  margin-right: 10px;
+}
+footer .footer-socmed .social-link:last-of-type {
+  margin-right: 0px;
+}
+footer .footer-socmed .social-icon {
   width: 40px;
   height: 40px;
-  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #B58900;
+  border-radius: 100px;
+  transition: 0.4s ease all;
+}
+footer .footer-socmed .social-icon i {
+  color: white;
+}
+footer .footer-socmed .social-icon:hover {
+  transition: 0.4s ease all;
+  background: white;
+  transform: scale(1.1);
+}
+footer .footer-socmed .social-icon:hover i {
+  color: #B58900;
 }
 
 @media (min-width: 769px) {
@@ -10269,8 +10295,31 @@ footer .footer-socmed .footerImg {
   margin: 30px auto;
   text-align: center;
 }
+.gallery .card-ctn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .gallery .card-ctn {
+    flex-direction: column;
+  }
+}
 .gallery .card {
   margin: 50px auto;
+}
+@media screen and (min-width: 769px) {
+  .gallery .card {
+    width: 33%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .gallery .card {
+    width: 100%;
+  }
 }
 .gallery .card .card-title {
   text-align: center;
