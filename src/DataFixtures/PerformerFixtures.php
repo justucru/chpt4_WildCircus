@@ -20,7 +20,7 @@ class PerformerFixtures extends Fixture
         $performer = new Performer();
         $performer->setName('Sou Missez');
         $performer->setNationality('Mexican');
-        $performer->setPicture('img/performer/sou.jpeg');
+        $performer->setPicture('sou.jpeg');
         $performer->setBiography(
             "After a brief stay in a Pretoria prison, 
             Sou discovered his natural calling for making people laugh,
@@ -36,7 +36,7 @@ class PerformerFixtures extends Fixture
         $performer = new Performer();
         $performer->setName('Paco Balan');
         $performer->setNationality('French');
-        $performer->setPicture('img/performer/paco.jpeg');
+        $performer->setPicture('paco.jpeg');
         $performer->setBiography(
             'Passionate about magic since he was 11, 
             Paco is always finding new ways to baffle Muggles and wizards alike.
@@ -52,7 +52,7 @@ class PerformerFixtures extends Fixture
         $performer = new Performer();
         $performer->setName('Gus Tucru');
         $performer->setNationality('American');
-        $performer->setPicture('img/performer/gus.jpeg');
+        $performer->setPicture('gus.jpeg');
         $performer->setBiography(
             'Lean and muscular, with a thrill for heights, 
             Gus is a natural acrobat.
@@ -71,7 +71,7 @@ class PerformerFixtures extends Fixture
             $performer = new Performer();
             $performer->setName($faker->name);
             $performer->setNationality($faker->countryCode);
-            $performer->setPicture($faker->imageUrl($width = 640, $height = 480, 'people'));
+            $performer->setPicture('yoshi-wool.jpg');
             $performer->setBiography($faker->text($maxNbChars = 200));
             for ($j = 0; $j < 3; $j++) {
                 $performer->addAct($this->getReference('act_' . random_int(3, 12)));

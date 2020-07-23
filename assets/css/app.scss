@@ -202,6 +202,7 @@ footer {
         }
     }
 
+
     //GALLERIES
     .gallery {
 
@@ -219,16 +220,24 @@ footer {
                 font-family: $title-font;
             }
         }
-    }
 
-    .acts {
-        img {
-            margin: 5px 0;
-            width: 100%;
-            height: auto;
-        }
+.performers {
+    img {
+        margin: 5px auto;
+        display: block;
+        width: 80%;
+        height: auto;
     }
+}
 
+.acts {
+    img {
+        margin: 5px 0;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+  
     .events {
         .card-text {
             text-align: center;
