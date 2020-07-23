@@ -24,7 +24,7 @@ class PerformerController extends AbstractController
     public function index(PerformerRepository $performerRepository): Response
     {
         return $this->render('performer/index.html.twig', [
-            'img' => $performerRepository->findAll(),
+            'performers' => $performerRepository->findAll(),
         ]);
     }
 
@@ -34,7 +34,7 @@ class PerformerController extends AbstractController
     public function showAll(PerformerRepository $performerRepository): Response
     {
         return $this->render('performer/showAll.html.twig', [
-            'img' => $performerRepository->findAll(),
+            'performers' => $performerRepository->findAll(),
         ]);
     }
 

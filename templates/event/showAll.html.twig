@@ -8,6 +8,7 @@
         <p class="intro">We perform all around the world, all year.
             See below if our next ones are near you !
         </p>
+        <div class="card-ctn">
         {% for event in events %}
             <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
                 <div class="card-header">{{ event.date|date('d M Y') }}</div>
@@ -25,5 +26,6 @@
                 </div>
             </div>
         {% endfor %}
+        </div>
     </div>
 {% endblock %}
