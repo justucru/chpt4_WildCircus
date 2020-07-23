@@ -122,6 +122,9 @@ footer {
 
 //GALLERIES
 .gallery {
+    h1 {
+        color: $primary;
+    }
     .intro {
         width: 50%;
         margin: 30px auto;
