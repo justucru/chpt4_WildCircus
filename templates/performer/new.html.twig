@@ -3,9 +3,11 @@
 {% block title %}New Performer{% endblock %}
 
 {% block body %}
+<div class="container-fluid">
     <h1>Create new Performer</h1>
 
     {{ include('performer/_form.html.twig') }}
 
     <a href="{{ path('performer_index') }}">back to list</a>
+</div>
 {% endblock %}

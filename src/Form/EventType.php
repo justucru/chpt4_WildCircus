@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\Act;
 use App\Entity\Event;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -16,8 +18,16 @@ class EventType extends AbstractType
             ->add('address')
             ->add('date')
             ->add('time')
-            ->add('acts')
-        ;
+            ->add('acts', EntityType::class, [
+        'label' => 'Program',
+        'class' => Act::class,
+        'choice_label' => function (Act $act) {
+            return $act->getId() . ' - ' . $act->getName();
+        },
+        'expanded' => true,
+        'multiple' => true,
+        'by_reference'=> false,
+        ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
