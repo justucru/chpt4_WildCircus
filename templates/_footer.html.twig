@@ -2,12 +2,18 @@
     <ul class="footer-links">
         <li><a href="{{ path('about') }}">About Us</a></li>
         <li><a href="{{ path('contact') }}">Contact Us</a></li>
-        <li><a href="{{ path('app_login') }}">Admin</a></li>
+        <li><a
+            {% if is_granted('ROLE_ADMIN') %}
+                href="{{ path('admin_index') }}"
+            {% else %}
+                 href="{{ path('app_login') }}"
+            {% endif %}
+            >Admin</a></li>
     </ul>
     <div class="footer-socmed">
         <a href="#" class="social-link" target="_blank" title="link towards the Wild Circus Facebook page"><span class="social-icon"><i class="fab fa-facebook-f"></i></span>  </a>
         <a href="#" class="social-link" target="_blank" title="link towards the Wild Circus Instragram page"><span class="social-icon"><i class="fab fa-instagram"></i></span> </a>
         <a href="#" class="social-link" target="_blank" title="link towards the Wild Circus Twitter page"><span class="social-icon"><i class="fab fa-twitter"></i></span> </a>
     </div>
-    <li>Made by <a href="https://github.com/justucru">Justine Pignet</a></li>
+    <li>Made by <a href="https://github.com/justucru" target="_blank">Justine Pignet</a></li>
 </footer>
