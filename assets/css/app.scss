@@ -68,6 +68,12 @@ footer {
         margin: 0 10px;
         padding: 0;
         list-style-type: none;
+        a {
+            color: $primary;
+            &:hover {
+                color: white;
+                text-decoration: none;
+            }
     }
     .footer-links {
         display: flex;
@@ -112,6 +118,7 @@ footer {
         }
         .footer-links {
             display: flex;
+            flex-direction: row;
             justify-content: center;
             text-align: center;
             width: 33%;

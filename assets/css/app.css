@@ -10200,6 +10200,7 @@ footer .footer-socmed .footerImg {
   }
   footer .footer-links {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     text-align: center;
     width: 33%;
