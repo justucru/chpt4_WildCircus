@@ -17,13 +17,7 @@ class PerformerType extends AbstractType
         $builder
             ->add('name')
             ->add('nationality')
-            ->add('pictureFile', VichFileType::class, [
-                'required' => false,
-                'allow_delete' => false, // True to display a delete checkbox
-                'download_uri' => false, // True to display a link of the picture
-                'label' => "Image",
-                'attr' => ['placeholder' => 'Add an image']
-            ])
+            ->add('picture')
             ->add('biography')
             ->add('acts', EntityType::class, [
                 'label' => 'Program',
