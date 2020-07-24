@@ -23,6 +23,9 @@
                                 <li>{{ act.name }}</li>
                             {% endfor %}
                         </ul>
+                        <div class="card-footer d-flex justify-content-center">
+                            <a class="btn btn-primary btn-lg btn-book" href="{{ path('booking_new') }}" role="button">Book now</a>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
