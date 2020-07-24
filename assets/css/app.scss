@@ -109,38 +109,6 @@ footer {
             &:hover {
                 color: white;
                 text-decoration: none;
-
-        .footer-socmed {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            .social-link{
-                margin-right: 10px;
-                &:last-of-type{
-                    margin-right: 0px;
-                }
-            }
-            .social-icon{
-                width: 40px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: $primary;
-                border-radius: 100px;
-
-                i{
-                    color: white;
-                }
-                transition: 0.4s ease all;
-                &:hover{
-                    transition: 0.4s ease all;
-                    background: white;
-                    transform: scale(1.1);
-                    i{
-                        color: $primary;
-                    }
-                }
             }
         }
     }
@@ -154,32 +122,32 @@ footer {
             margin-right: 10px;
 
             &:last-of-type {
-                margin-right: 0;
+                margin-right: 0px;
+            }
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $primary;
+            border-radius: 100px;
+
+            i {
+                color: white;
             }
 
-            .social-icon {
-                width: 40px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: $primary;
-                border-radius: 100px;
+            transition: 0.4s ease all;
+
+            &:hover {
+                transition: 0.4s ease all;
+                background: white;
+                transform: scale(1.1);
 
                 i {
-                    color: white;
-                }
-
-                transition: 0.4s ease all;
-
-                &:hover {
-                    transition: 0.4s ease all;
-                    background: white;
-                    transform: scale(1.1);
-
-                    i {
-                        color: $primary;
-                    }
+                    color: $primary;
                 }
             }
         }
@@ -253,29 +221,32 @@ footer {
 
         .carousel-control-next, .carousel-control-prev {
             z-index: 999;
-          
-        .card-ctn{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            @media screen and (max-width: 768px){
-                flex-direction: column;
+
+            .card-ctn {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: 0 auto;
+                @media screen and (max-width: 768px) {
+                    flex-direction: column;
+                }
             }
-        }
-        .card {
-            margin: 50px auto;
-            @media screen and (min-width: 769px){
-                width: 33%;
-            }
-            @media screen and (max-width: 768px){
-                width: 100%;
-            }
-            .card-title {
-                text-align: center;
-                font-family: $title-font;
+
+            .card {
+                margin: 50px auto;
+                @media screen and (min-width: 769px) {
+                    width: 33%;
+                }
+                @media screen and (max-width: 768px) {
+                    width: 100%;
+                }
+
+                .card-title {
+                    text-align: center;
+                    font-family: $title-font;
+                }
             }
         }
     }
@@ -304,46 +275,55 @@ footer {
         text-align: center;
     }
 
-    .card-ctn{
+    .card-ctn {
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
         max-width: 1200px;
         margin: 0 auto;
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: 768px) {
             flex-direction: column;
         }
-    }
-
-    .card {
-        margin: 50px auto;
-
-        .card-title {
-            text-align: center;
-            font-family: $title-font;
-        }
-    }
-
-    .performers {
-        img {
-            margin: 5px auto;
-            display: block;
-            width: 80%;
-            height: auto;
-        }
-    }
-
-    .acts {
-        img {
-            margin: 5px 0;
-            display: block;
-            width: 100%;
-            height: auto;
+        @media screen and (min-width: 769px) {
+            align-items: flex-start;
         }
 
-        .events {
-            .card-text {
+        .card {
+            margin: 50px 30px;
+
+            .card-title {
                 text-align: center;
+                font-family: $title-font;
             }
         }
+    }
+}
+
+.performers {
+    img {
+        margin: 5px auto;
+        display: block;
+        width: 80%;
+        height: auto;
+    }
+}
+
+.acts {
+    img {
+        margin: 5px 0;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.events {
+    .card {
+        min-width: 300px;
+
+        .card-text {
+            text-align: center;
+        }
+    }
+}

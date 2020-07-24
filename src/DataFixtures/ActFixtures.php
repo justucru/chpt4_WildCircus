@@ -53,10 +53,10 @@ class ActFixtures extends Fixture
 
         $faker = Faker\Factory::create('en_US');
 
-        for ($i = 3; $i < 13; $i++) {
+        for ($i = 3; $i < 12; $i++) {
             $act = new Act();
-            $act->setName($faker->word);
-            $act->setDescription($faker->text($maxNbChars = 300));
+            $act->setName(ucfirst($faker->word));
+            $act->setDescription($faker->text($maxNbChars = 200));
             $act->setDuration($faker->numberBetween($min = 5, $max = 25));
             $act->setPicture('tent.jpg');
 

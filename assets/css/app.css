@@ -10280,6 +10280,40 @@ footer .footer-socmed .social-icon:hover i {
   .carousel .carousel-control-next, .carousel .carousel-control-prev {
     z-index: 999;
   }
+  .carousel .carousel-control-next .card-ctn, .carousel .carousel-control-prev .card-ctn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 768px) {
+  .carousel .carousel-control-next .card-ctn, .carousel .carousel-control-prev .card-ctn {
+    flex-direction: column;
+  }
+}
+@media (min-width: 769px) {
+  .carousel .carousel-control-next .card, .carousel .carousel-control-prev .card {
+    margin: 50px auto;
+  }
+}
+@media screen and (min-width: 769px) and (min-width: 769px) {
+  .carousel .carousel-control-next .card, .carousel .carousel-control-prev .card {
+    width: 33%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 768px) {
+  .carousel .carousel-control-next .card, .carousel .carousel-control-prev .card {
+    width: 100%;
+  }
+}
+@media (min-width: 769px) {
+  .carousel .carousel-control-next .card .card-title, .carousel .carousel-control-prev .card .card-title {
+    text-align: center;
+    font-family: "Bungee", cursive;
+  }
 }
 .tab-content {
   margin: 10px;
@@ -10308,20 +10342,15 @@ footer .footer-socmed .social-icon:hover i {
     flex-direction: column;
   }
 }
-.gallery .card {
-  margin: 50px auto;
-}
 @media screen and (min-width: 769px) {
-  .gallery .card {
-    width: 33%;
+  .gallery .card-ctn {
+    align-items: flex-start;
   }
 }
-@media screen and (max-width: 768px) {
-  .gallery .card {
-    width: 100%;
-  }
+.gallery .card-ctn .card {
+  margin: 50px 30px;
 }
-.gallery .card .card-title {
+.gallery .card-ctn .card .card-title {
   text-align: center;
   font-family: "Bungee", cursive;
 }
@@ -10340,7 +10369,10 @@ footer .footer-socmed .social-icon:hover i {
   height: auto;
 }
 
-.events .card-text {
+.events .card {
+  min-width: 300px;
+}
+.events .card .card-text {
   text-align: center;
 }
 

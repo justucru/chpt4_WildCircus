@@ -16,8 +16,10 @@ class EventFixtures extends Fixture
         $event->setAddress("Place François Mitterand");
         $event->setDate(new \DateTime('2020-08-14'));
         $event->setTime(new \DateTime('17:00'));
-        for ($j = 0; $j < 3; $j++) {
-            $event->addAct($this->getReference('act_' . random_int(3, 12)));
+        $event->addAct($this->getReference('Laugh'));
+        $event->addAct($this->getReference('Dream'));
+        for ($j = 0; $j < 2; $j++) {
+            $event->addAct($this->getReference('act_' . random_int(3, 11)));
         }
 
         $manager->persist($event);
@@ -27,8 +29,10 @@ class EventFixtures extends Fixture
         $event->setAddress("Velkoprevorské Namesti");
         $event->setDate(new \DateTime('2020-09-27'));
         $event->setTime(new \DateTime('19:00'));
-        for ($j = 0; $j < 3; $j++) {
-            $event->addAct($this->getReference('act_' . random_int(3, 12)));
+        $event->addAct($this->getReference('Laugh'));
+        $event->addAct($this->getReference('Marvel'));
+        for ($j = 0; $j < 2; $j++) {
+            $event->addAct($this->getReference('act_' . random_int(3, 11)));
         }
 
         $manager->persist($event);
@@ -38,8 +42,10 @@ class EventFixtures extends Fixture
         $event->setAddress("Atatürk Bulvari");
         $event->setDate(new \DateTime('2020-10-04'));
         $event->setTime(new \DateTime('15:30'));
-        for ($j = 0; $j < 6; $j++) {
-            $event->addAct($this->getReference('act_' . random_int(3, 12)));
+        $event->addAct($this->getReference('Marvel'));
+        $event->addAct($this->getReference('Dream'));
+        for ($j = 0; $j < 2; $j++) {
+            $event->addAct($this->getReference('act_' . random_int(3, 11)));
         }
 
         $manager->persist($event);
@@ -49,8 +55,10 @@ class EventFixtures extends Fixture
         $event->setAddress("Blue Willow Crescent");
         $event->setDate(new \DateTime('2020-11-03'));
         $event->setTime(new \DateTime('18:00'));
-        for ($j = 0; $j < 6; $j++) {
-            $event->addAct($this->getReference('act_' . random_int(3, 12)));
+        $event->addAct($this->getReference('Laugh'));
+        $event->addAct($this->getReference('Dream'));
+        for ($j = 0; $j < 2; $j++) {
+            $event->addAct($this->getReference('act_' . random_int(3, 11)));
         }
 
         $manager->persist($event);
@@ -60,10 +68,23 @@ class EventFixtures extends Fixture
         $event->setAddress("Parnassus Avenue");
         $event->setDate(new \DateTime('2020-12-31'));
         $event->setTime(new \DateTime('16:00'));
-        for ($j = 0; $j < 6; $j++) {
-            $event->addAct($this->getReference('act_' . random_int(3, 12)));
+        $event->addAct($this->getReference('Dream'));
+        $event->addAct($this->getReference('Marvel'));
+        for ($j = 0; $j < 2; $j++) {
+            $event->addAct($this->getReference('act_' . random_int(3, 11)));
         }
+        $manager->persist($event);
 
+        $event = new Event();
+        $event->setCity("Eugene");
+        $event->setAddress("Harris Street");
+        $event->setDate(new \DateTime('2021-01-12'));
+        $event->setTime(new \DateTime('10:00'));
+        $event->addAct($this->getReference('Laugh'));
+        $event->addAct($this->getReference('Marvel'));
+        for ($j = 0; $j < 2; $j++) {
+            $event->addAct($this->getReference('act_' . random_int(3, 11)));
+        }
         $manager->persist($event);
 
         $manager->flush();
