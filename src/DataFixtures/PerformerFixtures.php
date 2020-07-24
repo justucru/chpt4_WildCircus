@@ -19,7 +19,7 @@ class PerformerFixtures extends Fixture
     {
         $performer = new Performer();
         $performer->setName('Sou Missez');
-        $performer->setNationality('Mexican');
+        $performer->setNationality('Mexico');
         $performer->setPicture('sou.jpeg');
         $performer->setBiography(
             "After a brief stay in a Pretoria prison, 
@@ -28,14 +28,14 @@ class PerformerFixtures extends Fixture
         );
         $performer->addAct($this->getReference('Laugh'));
         for ($i = 0; $i < 2; $i++) {
-            $performer->addAct($this->getReference('act_'.random_int(3, 12)));
+            $performer->addAct($this->getReference('act_'.random_int(3, 11)));
         }
 
         $manager->persist($performer);
 
         $performer = new Performer();
         $performer->setName('Paco Balan');
-        $performer->setNationality('French');
+        $performer->setNationality('France');
         $performer->setPicture('paco.jpeg');
         $performer->setBiography(
             'Passionate about magic since he was 11, 
@@ -44,14 +44,14 @@ class PerformerFixtures extends Fixture
         );
         $performer->addAct($this->getReference('Dream'));;
         for ($i = 0; $i < 3; $i++) {
-            $performer->addAct($this->getReference('act_'.random_int(3, 12)));
+            $performer->addAct($this->getReference('act_'.random_int(3, 11)));
         }
 
         $manager->persist($performer);
 
         $performer = new Performer();
         $performer->setName('Gus Tucru');
-        $performer->setNationality('American');
+        $performer->setNationality('United States');
         $performer->setPicture('gus.jpeg');
         $performer->setBiography(
             'Lean and muscular, with a thrill for heights, 
@@ -60,7 +60,7 @@ class PerformerFixtures extends Fixture
         );
         $performer->addAct($this->getReference('Marvel'));
         for ($i = 0; $i < 3; $i++) {
-            $performer->addAct($this->getReference('act_'.random_int(3, 12)));
+            $performer->addAct($this->getReference('act_'.random_int(3, 11)));
         }
 
         $manager->persist($performer);
@@ -73,8 +73,8 @@ class PerformerFixtures extends Fixture
             $performer->setNationality($faker->countryCode);
             $performer->setPicture('yoshi-wool.jpg');
             $performer->setBiography($faker->text($maxNbChars = 200));
-            for ($j = 0; $j < 3; $j++) {
-                $performer->addAct($this->getReference('act_' . random_int(3, 12)));
+            for ($j = 0; $j < 2; $j++) {
+                $performer->addAct($this->getReference('act_' . random_int(3, 11)));
             }
 
             $manager->persist($performer);
