@@ -10348,7 +10348,7 @@ footer .footer-socmed .social-icon:hover i {
   }
 }
 .gallery .card-ctn .card {
-  margin: 50px auto;
+  margin: 50px 30px;
 }
 .gallery .card-ctn .card .card-title {
   text-align: center;
@@ -10371,11 +10371,6 @@ footer .footer-socmed .social-icon:hover i {
 
 .events .card {
   min-width: 300px;
-}
-@media (min-width: 769px) {
-  .events .card {
-    margin: 50px 30px;
-  }
 }
 .events .card .card-text {
   text-align: center;

@@ -290,7 +290,7 @@ footer {
         }
 
         .card {
-            margin: 50px auto;
+            margin: 50px 30px;
 
             .card-title {
                 text-align: center;
@@ -321,9 +321,6 @@ footer {
 .events {
     .card {
         min-width: 300px;
-        @media (min-width: 769px) {
-            margin: 50px 30px;
-        }
 
         .card-text {
             text-align: center;
