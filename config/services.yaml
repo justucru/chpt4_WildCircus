@@ -29,4 +29,4 @@ services:
 
     App\Service\FileUploader:
         arguments:
-            $targetDirectory: '%performers_directory%'
+            $targetDirectory: '%img_directory%'
