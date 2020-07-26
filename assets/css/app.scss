@@ -286,7 +286,7 @@ footer {
             flex-direction: column;
         }
         @media screen and (min-width: 769px) {
-            align-items: flex-start;
+            align-items: stretch;
         }
 
         .card {
@@ -327,3 +327,4 @@ footer {
         }
     }
 }
+

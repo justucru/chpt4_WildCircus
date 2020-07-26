@@ -60,7 +60,7 @@ class BookingController extends AbstractController
                 ->subject('Your tickets to the Wild Circus!')
                 ->html('Dear ' . $booking->getName() . ',<br>
                Please find enclosed your ' . $booking->getNbTickets() . '
-               to our show in ' . $booking->getEvent()->getCity() . '. <br>
+                tickets to our show in ' . $booking->getEvent()->getCity() . '. <br>
                 Thank you for your booking! We hope you enjoy the show! <br>
                 The Wild Circus <br>',
             'text/plain');

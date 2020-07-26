@@ -10344,7 +10344,7 @@ footer .footer-socmed .social-icon:hover i {
 }
 @media screen and (min-width: 769px) {
   .gallery .card-ctn {
-    align-items: flex-start;
+    align-items: stretch;
   }
 }
 .gallery .card-ctn .card {
